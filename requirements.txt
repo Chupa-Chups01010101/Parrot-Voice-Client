@@ -1,0 +1,9 @@
+numpy
+pygame
+pygetwindow
+pynput
+pystray
+pillow
+requests
+websocket-client
+sounddevice
