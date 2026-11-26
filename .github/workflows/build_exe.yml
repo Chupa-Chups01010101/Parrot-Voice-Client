@@ -1,0 +1,44 @@
+name: Build ParrotClient EXE
+
+on:
+  push:
+    branches: [ "main", "master" ]
+    paths:
+      - "parrot_client.py"
+      - "requirements.txt"
+      - ".github/workflows/build_exe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows-exe:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies and PyInstaller
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pyinstaller
+
+      - name: Build single-file windowed EXE
+        run: |
+          pyinstaller --noconfirm --onefile --windowed --name "ParrotClient" parrot_client.py
+
+      - name: Publish Release with EXE
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0-latest
+          name: Parrot Voice Client (Windows EXE)
+          draft: false
+          prerelease: false
+          files: dist/ParrotClient.exe
