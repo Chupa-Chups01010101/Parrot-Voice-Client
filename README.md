@@ -1,142 +1,135 @@
-UA------------------------------------------------------------------
+UA ------------------------------------------------------------
 
-\# 🦜 Parrot Voice Client
+# 🦜 Parrot Voice Client
 
+Легкий клієнт для миттєвого запису голосових повідомлень у Discord (із розшифровкою в текст) та фонового прослуховування чату.
 
+## Безпека та прозорість
+Весь вихідний код клієнта відкритий у файлі `parrot_client.py`. Клієнт **не запитує** пароль чи токен від вашого акаунта Discord — він лише зчитує назву відкритого каналу із заголовка вікна та передає запис із мікрофона на сервер бота.
 
-Легкий клієнт для миттєвого запису голосових повідомлень у Discord та фонового прослуховування чату.
+---
 
+## Встановлення та запуск (Windows)
 
+Ви можете обрати будь-який із двох способів:
 
-\## Чому клієнт у вигляді відкритого коду?
+### Варіант 1: Готовий `.exe` файл (без встановлення Python)
+1. Перейдіть у розділ **Releases** (праворуч на сторінці репозиторію) та завантажте **`ParrotClient.exe`**.
+2. Запустіть файл — іконка **Parrot** з'явиться в системному треї (біля годинника).
+   > *Примітка:* `ParrotClient.exe` автоматично зібрано серверами GitHub із відкритого коду цього репозиторію. При першому запуску Windows SmartScreen може показати попередження через відсутність платного сертифіката — натисніть **Додатково (More info)** → **Все одно виконати (Run anyway)**.
 
-Ми не запаковували програму в невідомий `.exe` файл, щоб антивірус Windows не сварився на відсутність платного сертифіката. Весь код відкритий у файлі `parrot\_client.py` — клієнт не запитує пароль чи токен від Discord, а лише зчитує назву відкритого каналу із заголовка вікна.
+### Варіант 2: Запуск із відкритого коду (через Python)
+1. Переконайтеся, що на ПК встановлено **Python 3.10 – 3.12** (під час встановлення обов'язково поставте галочку **Add Python to PATH**).
+2. Натисніть зелену кнопку **Code → Download ZIP** у верхній частині сторінки та розпакуйте архів.
+3. Запустіть **`Start_Parrot.bat`** — скрипт сам створить ізольоване середовище, встановить необхідні бібліотеки й запустить клієнт у системному треї.
 
+---
 
+## Перше налаштування
 
-\## Встановлення та запуск (Windows)
+1. Натисніть правою кнопкою миші по іконці **Parrot** у системному треї → **Settings**.
+2. **Parrot Server URL:** вставте посилання, яке надав адміністратор сервера (наприклад, `https://....trycloudflare.com`).
+3. **Your Discord Username:** впишіть свій логін Discord (без `@`).
+4. Натисніть **Save & Apply**.
 
+---
 
+## Керування та можливості
 
-1\. Переконайтеся, що на ПК встановлено \*\*Python 3.10 – 3.12\*\* (під час встановлення обов'язково поставте галочку \*\*Add Python to PATH\*\*).
+* **Запис голосового (`f9` за замовчуванням):** натисніть гарячу клавішу, щоб почати запис у відкритий текстовий канал Discord, і натисніть її ще раз для відправки.
+* **Скасування запису (`Esc` за замовчуванням):** натисніть під час запису, щоб скинути його без відправки.
+* **Відповідь учаснику голосом (`Reply to ...`):** почніть голосове повідомлення англійською фразою **`Reply to [Нікнейм]`** (наприклад, *«Reply to Alex, я вже завантажив файл»*) або **`Reply to last`**, щоб відповісти на останнє повідомлення в чаті — бот автоматично прикріпить цитату-відповідь.
+* **Редагування та видалення повідомлень:** натисніть **правою кнопкою миші** по своєму повідомленню в чаті → **Застосунки (Apps)** → **`Edit`** (щоб змінити текст і перегенерувати озвучку) або **`Delete`** (щоб видалити повідомлення).
+* **Auto-Play Chat** (галочка в меню трею): автоматично озвучує в навушниках нові повідомлення у відкритому каналі Discord.
 
-2\. Розпакуйте архів у будь-яку зручну папку.
 
-3\. Запустіть \*\*`Start\_Parrot.bat`\*\*.
+RU ------------------------------------------------------------
 
-&#x20;  \* При першому запуску скрипт за 15–20 секунд сам встановить потрібні аудіо-бібліотеки і сховає програму в системний трей (зелена іконка біля годинника).
+# 🦜 Parrot Voice Client
 
-4\. Натисніть правою кнопкою миші по іконці \*\*Parrot\*\* у треї → \*\*Settings\*\*:
+Лёгкий клиент для мгновенной записи голосовых сообщений в Discord (с расшифровкой в текст) и фонового прослушивания чата.
 
-&#x20;  \* \*\*Parrot Server URL:\*\* вставте посилання, яке дав адміністратор сервера (наприклад, `https://....trycloudflare.com`).
+## Безопасность и прозрачность
+Весь исходный код клиента открыт в файле `parrot_client.py`. Клиент **не запрашивает** пароль или токен от вашего аккаунта Discord — он только считывает название открытого канала из заголовка окна и передаёт запись с микрофона на сервер бота.
 
-&#x20;  \* \*\*Your Discord Username:\*\* впишіть свій логін Discord (без `@`).
+---
 
-&#x20;  \* Натисніть \*\*Save \& Apply\*\*.
+## Установка и запуск (Windows)
 
+Вы можете выбрать любой из двух способов:
 
+### Вариант 1: Готовый `.exe` файл (без установки Python)
+1. Перейдите в раздел **Releases** (справа на странице репозитория) и скачайте **`ParrotClient.exe`**.
+2. Запустите файл — иконка **Parrot** появится в системном трее (возле часов).
+   > *Примечание:* `ParrotClient.exe` автоматически собран серверами GitHub из открытого кода этого репозитория. При первом запуске Windows SmartScreen может показать предупреждение из-за отсутствия платного сертификата — нажмите **Подробнее (More info)** → **Выполнить в любом случае (Run anyway)**.
 
-\## Керування
+### Вариант 2: Запуск из открытого кода (через Python)
+1. Убедитесь, что на ПК установлен **Python 3.10 – 3.12** (при установке обязательно поставьте галочку **Add Python to PATH**).
+2. Нажмите зелёную кнопку **Code → Download ZIP** в верхней части страницы и распакуйте архив.
+3. Запустите **`Start_Parrot.bat`** — скрипт сам создаст изолированное окружение, установит нужные библиотеки и запустит клиент в системном трее.
 
+---
 
+## Первая настройка
 
-\* \*\*`Pause`\*\* (або інша клавіша в налаштуваннях) — почати / завершити запис голосового у відкритий текстовий канал Discord.
+1. Нажмите правой кнопкой мыши по иконке **Parrot** в системном трее → **Settings**.
+2. **Parrot Server URL:** вставьте ссылку, которую выдал администратор сервера (например, `https://....trycloudflare.com`).
+3. **Your Discord Username:** впишите свой логин Discord (без `@`).
+4. Нажмите **Save & Apply**.
 
-\* \*\*`Esc`\*\* — скасувати поточний запис без відправки.
+---
 
-\* \*\*Auto-Play Chat\*\* (галочка в меню трею) — автоматично озвучувати в навушниках нові повідомлення у відкритому каналі.
+## Управление и возможности
 
+* **Запись голосового (`f9` по умолчанию):** нажмите горячую клавишу, чтобы начать запись в открытый текстовый канал Discord, и нажмите её ещё раз для отправки.
+* **Отмена записи (`Esc` по умолчанию):** нажмите во время записи, чтобы сбросить её без отправки.
+* **Ответ участнику голосом (`Reply to ...`):** начните голосовое сообщение английской фразой **`Reply to [Никнейм]`** (например, *«Reply to Alex, я уже загрузил файл»*) или **`Reply to last`**, чтобы ответить на последнее сообщение в чате — бот автоматически прикрепит цитату-ответ.
+* **Редактирование и удаление сообщений:** нажмите **правой кнопкой мыши** по своему сообщению в чате → **Приложения (Apps)** → **`Edit`** (чтобы изменить текст и перегенерировать озвучку) или **`Delete`** (чтобы удалить сообщение).
+* **Auto-Play Chat** (галочка в меню трея): автоматически озвучивает в наушниках новые сообщения в открытом канале Discord.
 
 
-RU---------------------------------------------------------------------
+EN ------------------------------------------------------------
 
+# 🦜 Parrot Voice Client
 
+A lightweight desktop client for instant voice-to-text messaging in Discord and hands-free background chat playback.
 
-🦜 Parrot Voice Client
+## Security & Transparency
+The full source code is open and available in `parrot_client.py`. The client **never asks** for your Discord password or account token — it simply reads the active channel name from the Discord window title and streams your microphone recording to the bot server.
 
+---
 
+## Installation & Launch (Windows)
 
-Лёгкий клиент для мгновенной записи голосовых сообщений в Discord и фонового прослушивания чата.
+Choose either of the two options below:
 
+### Option 1: Standalone `.exe` File (No Python required)
+1. Go to the **Releases** section (on the right side of the repository page) and download **`ParrotClient.exe`**.
+2. Run the file — the **Parrot** icon will appear in your system tray (near the clock).
+   > *Note:* `ParrotClient.exe` is automatically built by GitHub Actions directly from the open-source code in this repository. On first launch, Windows SmartScreen may display a warning because the executable is unsigned — click **More info** → **Run anyway**.
 
+### Option 2: Run from Source Code (via Python)
+1. Make sure **Python 3.10 – 3.12** is installed on your PC (check **Add Python to PATH** during installation).
+2. Click the green **Code → Download ZIP** button at the top of this page and extract the archive.
+3. Run **`Start_Parrot.bat`** — it will automatically set up a virtual environment, install dependencies, and launch the client in the system tray.
 
-\## Почему клиент в виде открытого кода?
+---
 
-Мы не упаковывали программу в неизвестный .exe файл, чтобы антивирус Windows не ругался на отсутствие платного сертификата. Весь код открыт в файле parrot\_client.py — клиент не запрашивает пароль или токен от Discord, а лишь считывает название открытого канала из заголовка окна.
+## Initial Setup
 
+1. Right-click the **Parrot** icon in the system tray → **Settings**.
+2. **Parrot Server URL:** paste the server URL provided by the server admin (e.g., `https://....trycloudflare.com`).
+3. **Your Discord Username:** enter your Discord username (without `@`).
+4. Click **Save & Apply**.
 
+---
 
-\## Установка и запуск (Windows)
+## Controls & Features
 
-
-
-1. Убедитесь, что на ПК установлен Python 3.10 – 3.12 (во время установки обязательно поставьте галочку Add Python to PATH).
-
-2\. Распакуйте архив в любую удобную папку.
-
-3\. Запустите Start\_Parrot.bat.
-
-&#x20;           При первом запуске скрипт за 15–20 секунд сам установит нужные аудиобиблиотеки и скроет программу в системный трей (зелёная иконка возле часов).
-
-4\. Нажмите правой кнопкой мыши по иконке Parrot в трее → Settings:
-
-&#x20;           Parrot Server URL: вставьте ссылку, которую дал администратор сервера (например, \[https://....trycloudflare.com](https://....trycloudflare.com)).
-
-&#x20;           Your Discord Username: впишите свой логин Discord (без @).
-
-&#x20;           Нажмите Save \& Apply.
-
-&#x20;    
-
-\## Управление
-
-Pause (или другая клавиша в настройках) — начать / завершить запись голосового в открытый текстовый канал Discord.
-
-Esc — отменить текущую запись без отправки.
-
-Auto-Play Chat (галочка в меню трея) — автоматически озвучивать в наушниках новые сообщения в открытом канале.
-
-
-
-EN------------------------------------------------------------------------
-
-
-
-🦜 Parrot Voice Client
-
-A lightweight client for instant voice message recording in Discord and background chat listening.
-
-
-
-\##Why is the client open-source?
-
-We didn't package the program into an unknown .exe file so that Windows Antivirus wouldn't flag the lack of a paid code-signing certificate. All the code is open and readable in parrot\_client.py — the client doesn't ask for your Discord password or token; it only reads the name of the currently open channel from the window title.
-
-
-
-\##Installation \& Launch (Windows)
-
-
-
-Make sure Python 3.10 – 3.12 is installed on your PC (during installation, be sure to check Add Python to PATH).
-
-Extract the archive into any convenient folder.
-
-Run Start\_Parrot.bat.
-
-&#x20;                On the first launch, the script will automatically install the required audio libraries within 15–20 seconds and minimize the program to the system tray (a green icon near the clock).
-
-Right-click the Parrot icon in the system tray → Settings:
-
-&#x20;                Parrot Server URL: paste the link provided by the server administrator (e.g., \[https://....trycloudflare.com](https://....trycloudflare.com)).
-
-&#x20;                Your Discord Username: enter your Discord username (without @).
-
-
-
-Click Save \& Apply.
-
-
-
+* **Record Voice (`f9` by default):** press the hotkey to start recording into the currently open Discord text channel, and press it again to send.
+* **Cancel Recording (`Esc` by default):** press while recording to discard the audio without sending.
+* **Voice Reply (`Reply to ...`):** start your voice message with **`Reply to [Nickname]`** (e.g., *"Reply to Alex, I just pushed the update"*) or **`Reply to last`** to reply to the latest message in chat — the bot will automatically attach a reply quote.
+* **Edit & Delete Messages:** **right-click** your message in Discord → **Apps** → **`Edit`** (to update the text and regenerate TTS audio) or **`Delete`** (to remove the message).
+* **Auto-Play Chat** (tray menu toggle): automatically reads incoming messages from the open Discord channel aloud in your headphones.
 
 
